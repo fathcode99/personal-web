@@ -66,13 +66,13 @@ const designPortfolio = [
 
 const design = () => {
   return (
-    <div className="font-Roboto mx-16">
+    <div className="font-Roboto mx-4">
       <div className="text-6xl font-extrabold my-12">Design Logo Portfolio</div>
       <div className="text-xl font-bold mb-6">Exclusive on Logoground</div>
-      <div className="gap-6 flex flex-wrap justify-start">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
         {
           designPortfolio.map((item, index) => (
-            <div key={index} className="w-[23.3%] border border-slate-300 flex flex-wrap p-3">
+            <div key={index} className="w-full border border-slate-300 flex flex-wrap p-3">
               <div className="">
                 {/* <Image src={`${item.imgRef}`} alt="logo" layout="fill" /> */}
                 <img src={item.imgRef} alt="logo" className="border" />
