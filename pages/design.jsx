@@ -66,7 +66,7 @@ const designPortfolio = [
 
 const design = () => {
   return (
-    <div className="font-Roboto mx-4">
+    <div className="font-Roboto mx-4 md:mx-16">
       <div className="text-6xl font-extrabold my-12">Design Logo Portfolio</div>
       <div className="text-xl font-bold mb-6">Exclusive on Logoground</div>
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
