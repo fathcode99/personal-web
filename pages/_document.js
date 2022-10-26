@@ -11,10 +11,16 @@ export default function Document() {
                     href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
                     rel="stylesheet"
                 />
+                <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
             </Head>
             <body>
                 <Main />
                 <NextScript />
+
+                <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+                <script>
+                    AOS.init();
+                </script>
             </body>
         </Html>
     )

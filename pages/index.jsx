@@ -2,10 +2,32 @@ import Image from "next/image"
 import Link from "next/link"
 import { designServices, webServices, priceDesign, priceWeb } from "./api/services"
 
-
-
-
-
+const listFeature = [
+  {
+    name: "Lorem ipsum dol",
+    checked: true
+  },
+  {
+    name: "Lorem ipsum dol",
+    checked: false
+  },
+  {
+    name: "Lorem ipsum dol",
+    checked: true
+  },
+  {
+    name: "Lorem ipsum dolor sit",
+    checked: false
+  },
+  {
+    name: "Lorem ipsum dol",
+    checked: false
+  },
+  {
+    name: "Lorem ipsum dol",
+    checked: false
+  }
+]
 
 export default function Home() {
   return (
@@ -30,7 +52,10 @@ export default function Home() {
         <div className="flex sm:flex-wrap md:flex-none gap-6 md:px-16 sm:px-8 mt-6 justify-center">
           {
             designServices.map((item, index) => (
-              <div className="border border-solid border-black p-4 bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] md:w-[23%] sm:w-[46%]">
+              <div
+                data-aos="fade-up" data-aos-duration="1500"
+                key={index}
+                className="border border-solid border-black p-4 bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] md:w-[23%] sm:w-[46%]">
                 <div className="bg-sky-500 h-44 w-full">
                   <img src={item.img} alt="design-sample" className="h-full w-full object-cover" />
                 </div>
@@ -56,7 +81,10 @@ export default function Home() {
         <div className="flex sm:flex-wrap md:flex-none gap-6 md:px-16 sm:px-8 mt-6 justify-center">
           {
             webServices.map((item, index) => (
-              <div key={index} className="border border-solid border-black p-4 bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] md:w-[23%] sm:w-[46%]">
+              <div
+                data-aos="fade-up" data-aos-duration="1500"
+                key={index}
+                className="border border-solid border-black p-4 bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] md:w-[23%] sm:w-[46%]">
                 <div className="bg-black h-44 w-full">
                   <img src={item.ref} alt="design-sample" />
                 </div>
@@ -79,17 +107,40 @@ export default function Home() {
         <div className="flex sm:flex-wrap md:flex-none gap-6 md:px-16 sm:px-8 mt-6 justify-center">
           {
             priceDesign.map((item, index) => (
-              <div key={index} className="border border-solid border-black p-4 bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,0.25)] md:w-[23%] sm:w-[46%]">
+              <div key={index} className="border border-solid border-black p-4 bg-white shadow-[10px_10px_6px_-1px_rgba(0,0,0,0.2)] md:w-[23%] sm:w-[46%]">
                 <div className="text-xl font-bold mb-4 text-center">{item.title}</div>
-                <div className="flex items-center justify-between">
-                  <div className="text-xl font-semibold ">{item.price}</div>
+                <div className="flex justify-between gap-2 mb-4">
+                  <div className="bg-black text-white px-2">Bronze</div>
+                  <div className="bg-black text-white px-2">Silver</div>
+                  <div className="bg-black text-white px-2">Gold</div>
+                </div>
+                {
+                  listFeature.map((item2, index2) => (
+                    <div className="flex justify-between gap-2 my-1 px-5">
+                      <div className="font-semibold">{item2.name}</div>
+                      {
+                        item2.checked ?
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                          </svg>
+                          :
+                          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                          </svg>
+                      }
+                    </div>
+                  ))
+                }
+                <div className="flex flex-col items-center justify-between">
+                  <div className="font-bold text-sm mt-4">Price :</div>
+                  <div className="text-2xl font-extrabold mb-4">{item.price}</div>
                   <button className="bg-black px-4 text-white hover:text-emerald-500 cursor-pointer">Order</button>
                 </div>
               </div>
             ))
           }
         </div>
-        <div className="text-xl font-semibold text-center mt-12">Design Services</div>
+        <div className="text-xl font-semibold text-center mt-12">Web Services</div>
         <div className="flex sm:flex-wrap md:flex-none gap-6 md:px-16 sm:px-8 mt-6 justify-center">
           {
             priceWeb.map((item, index) => (
