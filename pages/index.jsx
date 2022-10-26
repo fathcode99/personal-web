@@ -49,7 +49,6 @@ export default function Home() {
       </section>
 
       <div className="md:mr-16">
-
         <section className="font-Roboto mt-12 w-full">
           <div className="text-3xl font-extrabold text-center">Services</div>
           <div className="text-xl font-semibold text-center mb-8">Design Services</div>

@@ -18,7 +18,7 @@ const navLink = [
 
 const Header = () => {
   return (
-        <header className='font-Roboto h-14 bg-black text-white flex items-center justify-between px-4 sm:px-8'>
+        <header className='font-Roboto h-14 bg-black text-white flex items-center justify-between px-4 sm:px-8 md:px-16'>
             <div className='font-extrabold text-2xl'>Creative.Dev</div>
             <div className='flex gap-4 sm:gap-10 font-normal text-sm'>
                 {
